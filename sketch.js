@@ -7,7 +7,7 @@ const STATE_FIGHT = "fight";
 const STATE_WIN = "win";
 
 let gameState = STATE_START;
-let winner = null; // stores "P1" or "P2" when the game ends
+let winner = null;
 
 // ------------------------------------------------------------
 
@@ -17,6 +17,7 @@ let bgMusic2;
 let hitSound;
 let winSound;
 let startImage;
+let fightImage;
 
 // ------------------------------------------------------------
 class Fighter {
@@ -40,10 +41,10 @@ class Fighter {
 
     this.isAttacking = false;
     this.attackTimer = 0;
-    this.attackDuration = 18; // frames the punch stays active
-    this.attackCooldown = 0; // frames until this fighter can attack again
-    this.punchReach = 55; // how far the fist extends in pixels
-    this.punchDir = 1; // direction of punch: 1 = right, -1 = left
+    this.attackDuration = 18;
+    this.attackCooldown = 0;
+    this.punchReach = 55;
+    this.punchDir = 1;
 
     this.isBlocking = false;
 
@@ -65,7 +66,7 @@ class Fighter {
       if (this.attackTimer <= 0) {
         this.isAttacking = false;
         this.hitLanded = false;
-        this.attackCooldown = 20; // short cooldown before next punch
+        this.attackCooldown = 20;
       }
     }
 
@@ -120,14 +121,13 @@ class Fighter {
   // ----------------------------------------------------------
 
   takeHit() {
-    if (this.isBlocking) return; // blocked — no damage
+    if (this.isBlocking) return;
 
     this.health--;
-    this.hitFlash = 12; // flash white for 12 frames
+    this.hitFlash = 12;
 
     if (this.health <= 0) {
       this.health = 0;
-      // The winner is whichever fighter is NOT this one
       endGame(this.label === "P1" ? "P2" : "P1");
     }
   }
@@ -189,7 +189,8 @@ function preload() {
   bgMusic2 = loadSound("assets/sounds/background_2.mp3");
   hitSound = loadSound("assets/sounds/hit.mp3");
   winSound = loadSound("assets/sounds/win.mp3");
-  startImage = loadImage("assets/images/prefight.png");
+  startImage = loadImage("assets/images/prefight.jpg");
+  fightImage = loadImage("assets/images/fight.jpg");
 }
 
 // ============================================================
@@ -211,7 +212,7 @@ function setupFighters() {
   fighter1 = new Fighter(
     200,
     groundY - 28,
-    color(0, 200, 180), // teal
+    color(0, 200, 180),
     { left: 65, right: 68, attack: 70, block: 71 }, // A D F G
     "P1",
   );
@@ -219,7 +220,7 @@ function setupFighters() {
   fighter2 = new Fighter(
     600,
     groundY - 28,
-    color(255, 150, 30), // orange
+    color(255, 150, 30),
     { left: LEFT_ARROW, right: RIGHT_ARROW, attack: 75, block: 76 }, // Arrows K L
     "P2",
   );
@@ -227,19 +228,20 @@ function setupFighters() {
 
 // ============================================================
 
+// GENAI-GUIDED EDIT
 function draw() {
-  // INDEPENDENT EDIT
-  image(startImage, 0, 0, width, height);
-
   if (gameState === STATE_START) {
+    if (startImage) image(startImage, 0, 0, width, height);
     drawStartScreen();
   } else if (gameState === STATE_FIGHT) {
+    if (fightImage) image(fightImage, 0, 0, width, height);
     drawArena();
     updateAndDrawFighters();
     checkHits();
     drawHealthBars();
     drawFightHUD();
   } else if (gameState === STATE_WIN) {
+    if (fightImage) image(fightImage, 0, 0, width, height);
     drawArena();
     fighter1.draw();
     fighter2.draw();
@@ -286,34 +288,34 @@ function endGame(winnerLabel) {
 // ------------------------------------------------------------
 
 function drawStartScreen() {
-  if (startImage) {
-    image(startImage, 0, 0, width, height);
-  } else {
-    background(10);
-  }
+  image(startImage, 0, 0, width, height); // INDEPENDENT EDIT
 
   fill(255);
   textAlign(CENTER);
-  textSize(52);
-  text("PORTAL PURSUIT", width / 2, height / 2 - 60);
+  textSize(45); // INDEPENDENT EDIT
+  text("PORTAL PURSUIT", width / 2 + 170, height / 2 - 80); // INDEPENDENT EDIT
 
-  fill(160);
+  fill(200);
   textSize(18);
   text(
-    "Be the first to land 3 hits to pass through!",
-    width / 2,
-    height / 2 - 20,
+    "Be the first to land 3 hits to pass through!", // INDEPENDENT EDIT
+    width / 2 + 170, // INDEPENDENT EDIT
+    height / 2 - 50, // INDEPENDENT EDIT
   );
 
   textSize(14);
   fill(0, 200, 180);
-  text("P1: A/D move   F attack   G block", width / 2, height / 2 + 30);
+  text("P1: A/D move   F attack   G block", width / 2 + 170, height / 2 + 15); // INDEPENDENT EDIT
   fill(255, 150, 30);
-  text("P2: Arrows move   K attack   L block", width / 2, height / 2 + 55);
+  text(
+    "P2: Arrows move   K attack   L block",
+    width / 2 + 170, // INDEPENDENT EDIT
+    height / 2 + 40, // INDEPENDENT EDIT
+  );
 
   fill(255);
   textSize(16);
-  text("Press ENTER to start", width / 2, height / 2 + 110);
+  text("Press ENTER to start", width / 2 + 170, height / 2 + 110); // INDEPENDENT EDIT
 }
 
 // ------------------------------------------------------------
@@ -325,7 +327,7 @@ function drawWinScreen() {
   fill(winner === "P1" ? color(0, 200, 180) : color(255, 150, 30));
   textAlign(CENTER);
   textSize(56);
-  text(winner + " WINS!", width / 2, height / 2 - 30);
+  text(winner + " MAY PASS THROUGH!", width / 2, height / 2 - 30); // INDEPENDENT EDIT
 
   fill(255);
   textSize(18);
@@ -380,7 +382,7 @@ function checkHits() {
 function drawHealthBars() {
   let barW = 200;
   let barH = 18;
-  let barY = 45;
+  let barY = 30; // INDEPENDENT EDIT
   let padding = 30;
 
   let p1W = map(fighter1.health, 0, fighter1.maxHealth, 0, barW);
@@ -399,9 +401,9 @@ function drawHealthBars() {
   textSize(13);
   noStroke();
   textAlign(LEFT);
-  text("P1", padding, barY - 5);
+  text("P1", padding + 5, barY + 14); // INDEPENDENT EDIT
   textAlign(RIGHT);
-  text("P2", width - padding, barY - 5);
+  text("P2", width - padding - 5, barY + 14); // INDEPENDENT EDIT
 }
 
 // ------------------------------------------------------------
