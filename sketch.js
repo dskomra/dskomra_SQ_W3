@@ -18,6 +18,9 @@ let hitSound;
 let winSound;
 let startImage;
 let fightImage;
+let welcomeSound;
+let performanceSound;
+let cakeSound;
 
 // ------------------------------------------------------------
 class Fighter {
@@ -126,6 +129,10 @@ class Fighter {
     this.health--;
     this.hitFlash = 12;
 
+    if (this.health > 0) {
+      performanceSound.play();
+    }
+
     if (this.health <= 0) {
       this.health = 0;
       endGame(this.label === "P1" ? "P2" : "P1");
@@ -191,6 +198,9 @@ function preload() {
   winSound = loadSound("assets/sounds/win.mp3");
   startImage = loadImage("assets/images/prefight.jpg");
   fightImage = loadImage("assets/images/fight.jpg");
+  welcomeSound = loadSound("assets/sounds/glados_welcome.wav");
+  performanceSound = loadSound("assets/sounds/glados_performance.wav");
+  cakeSound = loadSound("assets/sounds/glados_cake.wav");
 }
 
 // ============================================================
@@ -199,11 +209,6 @@ function setup() {
   createCanvas(800, 450);
   groundY = height - 80;
   setupFighters();
-
-  // GENAI-GUIDED EDIT
-  if (!bgMusic1.isPlaying()) {
-    bgMusic1.loop();
-  }
 }
 
 // ------------------------------------------------------------
@@ -263,6 +268,8 @@ function startGame() {
   if (!bgMusic2.isPlaying()) {
     bgMusic2.loop();
   }
+
+  welcomeSound.play();
 }
 
 // ------------------------------------------------------------
@@ -283,6 +290,7 @@ function endGame(winnerLabel) {
 
   // INDEPENDENT EDIT
   winSound.play();
+  cakeSound.play();
 }
 
 // ------------------------------------------------------------
@@ -433,5 +441,13 @@ function keyPressed() {
 
   if (keyCode === 75 && gameState === STATE_FIGHT) {
     fighter2.startAttack(fighter1.x);
+  }
+}
+
+// ============================================================
+
+function mouseMoved() {
+  if (gameState === STATE_START && !bgMusic1.isPlaying()) {
+    bgMusic1.loop();
   }
 }

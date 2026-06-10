@@ -35,6 +35,9 @@ Press 'enter'
 | `assets/sounds/background_2.mp3` [4] | Samuel F. Johanns, Dark and atmospheric - Texture - pixabay.com   |
 | `assets/images/fight.jpg` [5]        | MODDB, Portal 2 Beta Door Skin - moddb.com                        |
 | `assets/images/prefight.jpg` [6]     | MODDB, Early-Alpha Test Chamber 00 Exit - moddb.com               |
+| `assets/sounds/welcome.wav` [7]      | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
+| `assets/sounds/performance.wav` [8]  | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
+| `assets/sounds/cake.wav` [8]         | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
 
 ## References
 
@@ -44,3 +47,6 @@ Press 'enter'
 [4] Samuel F. Johanns. Dark and atmospheric - Texture. Pixabay. Retrieved May 27, 2026 from https://pixabay.com/sound-effects/musical-dark-and-athmospheric-texture-114014/
 [5]MODDB. 2016. Portal 2 Beta Door Skin. Retrieved May 27, 2026 from https://www.moddb.com/games/portal-2/addons/portal-2-beta-door-skin
 [6] MODDB. 2018. Early-Alpha Test Chamber 00 Exit. Retrieved May 27, 2026 from https://www.moddb.com/mods/p2rs/images/at00
+[7] Etienne Perot. AI Voice Generation of [Welcome Test Subjects]. GLaDOS Voice Generator. Retrieved June 9, 2026 from https://glados.c-net.org/
+[8] Etienne Perot. AI Voice Generation of [Performance Declining]. GLaDOS Voice Generator. Retrieved June 9, 2026 from https://glados.c-net.org/
+[9] Etienne Perot. AI Voice Generation of [Cake Allocation Acquired]. GLaDOS Voice Generator. Retrieved June 9, 2026 from https://glados.c-net.org/
