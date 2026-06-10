@@ -27,17 +27,17 @@ Press 'enter'
 
 ## Assets
 
-| File                                 | Source                                                            |
-| ------------------------------------ | ----------------------------------------------------------------- |
-| `assets/sounds/win.mp3` [1]          | freesound_community, Badge Coin Win - pixabay.com                 |
-| `assets/sounds/hit.mp3` [2]          | freesound_community, Sci-Fi Energy Gun - pixabay.com              |
-| `assets/sounds/background_1.mp3` [3] | Samuel F. Johanns, Aeolian Futuristics - Atmo Track - pixabay.com |
-| `assets/sounds/background_2.mp3` [4] | Samuel F. Johanns, Dark and atmospheric - Texture - pixabay.com   |
-| `assets/images/fight.jpg` [5]        | MODDB, Portal 2 Beta Door Skin - moddb.com                        |
-| `assets/images/prefight.jpg` [6]     | MODDB, Early-Alpha Test Chamber 00 Exit - moddb.com               |
-| `assets/sounds/welcome.wav` [7]      | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
-| `assets/sounds/performance.wav` [8]  | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
-| `assets/sounds/cake.wav` [9]         | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
+| File                                       | Source                                                            |
+| ------------------------------------------ | ----------------------------------------------------------------- |
+| `assets/sounds/win.mp3` [1]                | freesound_community, Badge Coin Win - pixabay.com                 |
+| `assets/sounds/hit.mp3` [2]                | freesound_community, Sci-Fi Energy Gun - pixabay.com              |
+| `assets/sounds/background_1.mp3` [3]       | Samuel F. Johanns, Aeolian Futuristics - Atmo Track - pixabay.com |
+| `assets/sounds/background_2.mp3` [4]       | Samuel F. Johanns, Dark and atmospheric - Texture - pixabay.com   |
+| `assets/images/fight.jpg` [5]              | MODDB, Portal 2 Beta Door Skin - moddb.com                        |
+| `assets/images/prefight.jpg` [6]           | MODDB, Early-Alpha Test Chamber 00 Exit - moddb.com               |
+| `assets/sounds/glados_welcome.wav` [7]     | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
+| `assets/sounds/glados_performance.wav` [8] | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
+| `assets/sounds/glados_cake.wav` [9]        | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
 
 ## References
 
