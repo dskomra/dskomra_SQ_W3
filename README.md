@@ -37,7 +37,7 @@ Press 'enter'
 | `assets/images/prefight.jpg` [6]     | MODDB, Early-Alpha Test Chamber 00 Exit - moddb.com               |
 | `assets/sounds/welcome.wav` [7]      | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
 | `assets/sounds/performance.wav` [8]  | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
-| `assets/sounds/cake.wav` [8]         | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
+| `assets/sounds/cake.wav` [9]         | Etienne Perot, GLaDOS Voice Generator - glados.c-net.org          |
 
 ## References
 
